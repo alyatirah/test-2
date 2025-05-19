@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ms" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro - 3R QUEST</title>
+  <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="game">
+      <div class="game-header">
+        <h1 class="game-title"><i class="fas fa-recycle"></i> 3R QUEST</h1>
+        <div class="subtitle">Pembelajaran Kitar Semula</div>
+        <div class="three-r-container">
+          <div class="three-r-item"><i class="fas fa-sync-alt"></i> Recycle</div>
+          <div class="three-r-item"><i class="fas fa-minus-circle"></i> Reduce</div>
+          <div class="three-r-item"><i class="fas fa-redo-alt"></i> Reuse</div>
+        </div>
+      </div>
+      <div class="intro-content">
+        <h2>Selamat Datang ke 3R QUEST!</h2>
+        <p class="intro-text">Mari belajar tentang konsep 3R dan cara menjaga alam sekitar melalui permainan interaktif ini.</p>
+        <div class="intro-section" id="whatIs3R">
+          <h3><i class="fas fa-info-circle"></i> Apa itu 3R?</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="concept-card">
+                <div class="concept-icon reduce-icon">
+                  <i class="fas fa-minus-circle"></i>
+                </div>
+                <h4>Reduce</h4>
+                <p>Mengurangkan bermaksud menggunakan kurang produk dan tenaga untuk mengurangkan jumlah sampah yang kita hasilkan.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="concept-card">
+                <div class="concept-icon reuse-icon">
+                  <i class="fas fa-redo-alt"></i>
+                </div>
+                <h4>Reuse</h4>
+                <p>Guna semula bermaksud menggunakan semula item sebanyak mungkin sebelum membuangnya atau mengitar semula.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="concept-card">
+                <div class="concept-icon recycle-icon">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <h4>Recycle</h4>
+                <p>Kitar semula bermaksud memproses bahan terbuang menjadi produk baru untuk mengurangkan penggunaan bahan mentah.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="intro-section" id="binColors">
+          <h3><i class="fas fa-palette"></i> Warna Tong Kitar Semula</h3>
+          <p>Tong kitar semula berwarna memudahkan proses pengasingan sampah. Setiap warna mewakili jenis bahan tertentu.</p>
+          <div class="bin-colors-container">
+            <div class="bin-color-item">
+              <div class="bin-color blue"></div>
+              <div class="bin-color-info">
+                <h5>Biru</h5>
+                <p>Kertas & Kadbod</p>
+              </div>
+            </div>
+            <div class="bin-color-item">
+              <div class="bin-color yellow"></div>
+              <div class="bin-color-info">
+                <h5>Kuning</h5>
+                <p>Plastik</p>
+              </div>
+            </div>
+            <div class="bin-color-item">
+              <div class="bin-color green"></div>
+              <div class="bin-color-info">
+                <h5>Hijau</h5>
+                <p>Kaca</p>
+              </div>
+            </div>
+            <div class="bin-color-item">
+              <div class="bin-color brown"></div>
+              <div class="bin-color-info">
+                <h5>Coklat</h5>
+                <p>Sisa Organik</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="intro-section" id="didYouKnow">
+          <h3><i class="fas fa-lightbulb"></i> Tahukah Anda?</h3>
+          <div class="fact-card" id="randomFact">
+            <p>Satu tan kertas yang dikitar semula menyelamatkan 17 pokok dewasa.</p>
+          </div>
+          <button class="btn btn-info btn-sm" id="newFactBtn">Fakta Seterusnya</button>
+        </div>
+        <div class="text-center mt-5">
+          <a href="{{ url_for('play') }}" class="btn btn-success btn-lg start-button">
+            <i class="fas fa-play"></i> Mula Permainan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const recyclingDidYouKnow = [
+      "Satu tan kertas yang dikitar semula menyelamatkan 17 pokok dewasa.",
+      "Kita boleh menjimatkan 4,000 kilowatt jam tenaga dengan hanya mengitar semula satu tan aluminium.",
+      "Botol plastik memerlukan kira-kira 500 tahun untuk terurai di tapak pelupusan.",
+      "Kitar semula satu tan kaca menjimatkan kira-kira 42 kilowatt jam tenaga.",
+      "Kebanyakan logam boleh dikitar semula secara tidak terhad tanpa kehilangan kualiti.",
+      "Adalah lebih baik untuk mengitar semula plastik daripada membakarnya, kerana pembakaran plastik boleh melepaskan gas toksik.",
+      "Kitar semula satu botol kaca dapat menjimatkan cukup tenaga untuk menghidupkan mentol 100-watt selama empat jam.",
+      "Malaysia menghasilkan lebih daripada 38,000 tan sisa pepejal setiap hari, tetapi hanya 24% yang dikitar semula.",
+      "Mengurangkan penggunaan (reduce) sebenarnya lebih baik untuk alam sekitar daripada mengitar semula.",
+      "Memproses aluminium yang dikitar semula menggunakan 95% kurang tenaga daripada aluminium mentah."
+    ];
+    function showRandomFact() {
+      const factElement = document.getElementById('randomFact');
+      const randomFact = recyclingDidYouKnow[Math.floor(Math.random() * recyclingDidYouKnow.length)];
+      factElement.innerHTML = `<p>${randomFact}</p>`;
+    }
+    document.getElementById('newFactBtn').addEventListener('click', showRandomFact);
+    window.onload = function() {
+      showRandomFact();
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

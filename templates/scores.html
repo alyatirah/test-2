@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ms" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Skor - 3R QUEST</title>
+  <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="game-title"><i class="fas fa-recycle"></i> 3R QUEST</h1>
+    <h2>Senarai Skor</h2>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nama Pemain</th>
+          <th>Level</th>
+          <th>Betul</th>
+          <th>Salah</th>
+          <th>Skor (%)</th>
+          <th>Tarikh</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for score in scores %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ score.player_name }}</td>
+            <td>{{ score.level }}</td>
+            <td>{{ score.correct_sorts }}</td>
+            <td>{{ score.incorrect_sorts }}</td>
+            <td>{{ score.score_percentage }}</td>
+            <td>{{ score.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="7">Tiada skor lagi.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{{ url_for('intro') }}" class="btn btn-secondary">Kembali ke Intro</a>
+  </div>
+</body>
+</html>
