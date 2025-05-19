@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ms" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Main - 3R QUEST</title>
+  <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="game-title"><i class="fas fa-recycle"></i> 3R QUEST</h1>
+    <h2>Permainan Kitar Semula</h2>
+    <p>Permainan utama di sini (sila tambah fungsi JavaScript/HTML mengikut keperluan anda).</p>
+    <h3>Top 5 Skor</h3>
+    <ul>
+      {% for score in top_scores %}
+        <li>{{ score.player_name }} - Level {{ score.level }} - {{ score.score_percentage }}%</li>
+      {% else %}
+        <li>Tiada skor lagi.</li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('scores') }}" class="btn btn-info">Lihat Semua Skor</a>
+    <a href="{{ url_for('intro') }}" class="btn btn-secondary">Kembali ke Intro</a>
+  </div>
+</body>
+</html>

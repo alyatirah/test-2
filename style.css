@@ -1,0 +1,47 @@
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #181a1b;
+}
+
+.game-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #6be672;
+}
+
+.three-r-item {
+  display: inline-block;
+  margin: 0 1rem;
+  font-weight: 700;
+  color: #ffe066;
+}
+
+.concept-card {
+  background: #23272b;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.bin-color.blue { background: #52a7e0; }
+.bin-color.yellow { background: #ffe066; }
+.bin-color.green { background: #5cc27b; }
+.bin-color.brown { background: #b0825c; }
+.bin-color {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.fact-card {
+  background: #23272b;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
